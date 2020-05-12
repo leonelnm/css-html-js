@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+:root {
+    --lime-green: hsl(163, 72%, 41%);
+    --bright-red: hsl(356, 69%, 56%);
+    --facebook: hsl(195, 100%, 50%);
+    --twitter: hsl(203, 89%, 53%);
+    --instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    --youTube: hsl(348, 97%, 39%);
+    /*dark theme*/
+    --clr-bg-page: hsl(230, 17%, 14%);
+    --clr-bg-top-pattern: hsl(232, 19%, 15%);
+    --clr-bg-card: hsl(228, 28%, 20%);
+    --clr-desatured-text: hsl(228, 34%, 66%);
+    --clr-text: hsl(0, 0%, 100%);
+    /*togle*/
+    --clr-toggle: linear-gradient(to right, hsl(146, 68%, 55%), hsl(210, 78%, 56%));
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125em;
+    line-height: 1.6;
+    background-color: var(--clr-bg-page);
+    color: var(--clr-desatured-text);
+}
+
+.instagram {
+    fill: var(--instagram);
+}
+
+.twitter {
+    fill: var(--twitter);
+}
+
+.youtube {
+    fill: var(--youTube);
+}
+
+.facebook {
+    fill: var(--facebook);
+}
+
+.up {
+    fill: var(--lime-green);
+}
+
+.down {
+    fill: var(--bright-red);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+/* toogle */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 4rem;
+    height: 1.8rem;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4rem;
+    width: 1.4rem;
+    left: 4px;
+    bottom: 3px;
+    background-color: var(--clr-bg-page);
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-image: var(--clr-toggle);
+}
+
+input:checked+.slider:before {
+    transform: translateX(2.1rem);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/* header */
+
+header {
+    font-weight: bold;
+    background-color: var(--clr-bg-top-pattern);
+    padding: 2rem 1rem;
+}
+
+.title-head>h1 {
+    font-size: 1.6rem;
+    color: var(--clr-text);
+    white-space: pre-line;
+    margin-bottom: 0;
+}
+
+.title-head>p {
+    font-size: .8rem;
+}
+
+.toggle-bar {
+    margin: 1rem 0 4rem 0;
+    border-top: 1px solid var(--clr-bg-card);
+    padding-top: 1rem;
+    font-size: .8rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+
+/* main */
+
+main {
+    padding: 0 1rem;
+    position: relative;
+    top: -5rem;
+}
+
+.multimedia>article {
+    margin-top: 1rem;
+}
+
+.main-card {
+    background-color: var(--clr-bg-card);
+    height: 12rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    color: var(--clr-desatured-text);
+    border-radius: 5px;
+    box-shadow: 0 0 4px var(--clr-bg-top-pattern);
+}
+
+
+/* card */
+
+.main-card .red-social {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: .8em;
+}
+
+.number {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -5px;
+    color: var(--clr-text);
+}
+
+.main-card .red-social>img {
+    width: 20px;
+    height: 20px;
+}
+
+.main-card .type {
+    letter-spacing: 2px;
+    font-size: .8rem;
+    text-transform: uppercase;
+}
+
+.main-card .today {
+    padding-top: 1rem;
+    font-size: .7em;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.main-card .today>img {
+    height: .35rem;
+    margin-right: .2rem;
+}
+
+.main-card .today.down>p {
+    color: var(--bright-red);
+}
+
+.main-card .today.up>p {
+    color: var(--lime-green);
+}
+
+#card-facebook {
+    border-top: solid .3rem var(--facebook);
+}
+
+#card-twitter {
+    border-top: solid .3rem var(--twitter);
+}
+
+#card-instagram {
+    border-top: .3rem solid;
+    border-image: var(--instagram) 1;
+}
+
+#card-youtube {
+    border-top: solid .3rem var(--youTube);
+}
+
+
+/*overview*/
+
+.grid-card {
+    padding: 1rem 2rem;
+    margin-bottom: 1rem;
+    height: 7rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--clr-bg-card);
+    color: var(--clr-desatured-text);
+    border-radius: 5px;
+    box-shadow: 0 0 4px var(--clr-bg-top-pattern);
+}
+
+.grid-card p:first-of-type {
+    font-size: .8rem;
+}
+
+.grid-card img:nth-child(2) {
+    place-self: center right;
+    height: 20px;
+    width: 20px;
+}
+
+.grid-card img:nth-child(2) {
+    height: 25px;
+    width: 25px;
+}
+
+.grid-card span:nth-child(4) {
+    place-self: center right;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.grid-card .down>p {
+    color: var(--bright-red);
+}
+
+.grid-card .up>p {
+    color: var(--lime-green);
+}
+
+.grid-card .up>img,
+.grid-card .down>img {
+    margin-right: .2rem;
+}
+
+.subtitle {
+    margin: 2rem 0 1rem 0;
+    color: var(--clr-text);
+}
+
+@media screen and (min-width:1200px) {
+    body {
+        overflow-x: hidden;
+    }
+    header {
+        width: 100vw;
+        padding: 2rem 10vw 5rem 10vw;
+        margin: 0 0 3rem 0;
+    }
+    .title-head {
+        width: 80%;
+        float: left;
+    }
+    .title-head>h1 {
+        font-size: 2rem;
+    }
+    .toggle-bar {
+        border-top: none;
+        padding-top: 0;
+        font-size: .8rem;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .toggle-bar label:first-of-type {
+        margin-right: 1rem;
+    }
+    main {
+        width: 100vw;
+        padding: 0;
+        top: -9rem;
+    }
+    main>h2 {
+        padding-left: 10vw;
+    }
+    .multimedia {
+        padding: 0 10vw;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: stretch;
+        gap: 1.5em;
+    }
+    .overview {
+        padding: 0 10vw;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: stretch;
+        gap: 1.5em;
+    }
+}

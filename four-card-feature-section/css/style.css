@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* reset */
+
+h1,
+h2 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+*,
+* ::before,
+* ::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    font-size: 15px;
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: hsl(0, 0%, 98%);
+    color: hsl(229, 6%, 66%)
+}
+
+
+/* css */
+
+h1,
+h2 {
+    color: hsl(234, 12%, 34%);
+}
+
+h1 {
+    font-weight: 800;
+    word-wrap: normal;
+    padding: .25rem 0 1rem 0;
+}
+
+h2 {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+p {
+    font-size: .8em;
+    font-weight: 200;
+}
+
+img {
+    padding-top: 1rem;
+    height: 60px;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.title {
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.title>span {
+    font-weight: 100;
+}
+
+.title>p {
+    font-size: .6em;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.cards-container {
+    margin: 3rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.item-left {
+    align-self: center;
+    border-top: 3px solid hsl(180, 62%, 55%);
+}
+
+.item-center article:first-child {
+    border-top: 3px solid hsl(0, 78%, 62%);
+}
+
+.item-center article:last-child {
+    margin-top: 1.5rem;
+    border-top: 3px solid hsl(34, 97%, 64%);
+}
+
+.item-right {
+    align-self: center;
+    border-top: 3px solid hsl(212, 86%, 64%);
+}
+
+article {
+    padding: 2rem;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 5px 15px 0px rgba(73, 73, 73, 0.75);
+}
+
+@media (min-width: 800px) {
+    .cards-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .title>p {
+        font-size: .6em;
+        width: 40%;
+        margin: 0 auto;
+    }
+}
